@@ -13,11 +13,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          # Defaults to the user or organization that owns the workflow file
-          scope: '@mag5'
-      - run: echo -e "//npm.pkg.github.com/:_authToken=\${NODE_AUTH_TOKEN}\n@mag5:registry=https://npm.pkg.github.com\nalways-auth=true" > ~/.npmrc
-      - run: cat ~/.npmrc
-      - run: echo $NPM_CONFIG_USERCONFIG
       - run: cat $NPM_CONFIG_USERCONFIG
       - run: npm whoami --registry 'https://npm.pkg.github.com'
         env:
