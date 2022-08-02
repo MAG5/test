@@ -17,6 +17,7 @@ jobs:
           scope: '@mag5'
       - run: echo -e "//npm.pkg.github.com/:_authToken=\${NODE_AUTH_TOKEN}\n@mag5:registry=https://npm.pkg.github.com\nalways-auth=true" > ~/.npmrc
       - run: cat ~/.npmrc
+      - run: echo $NPM_CONFIG_USERCONFIG
 #       - run: npm whoami
       - run: npm install
       - run: npm publish
